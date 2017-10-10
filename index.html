@@ -46,19 +46,19 @@
 </head>
 <body>
 <div class="bg">
-    <div class="wrap" draggable="false">
-        <img draggable="false" class="img" src="images/1.jpg" alt=""/>
-        <img draggable="false" class="img" src="images/2.jpg" alt=""/>
-        <img draggable="false" class="img" src="images/3.jpg" alt=""/>
-        <img draggable="false" class="img" src="images/4.jpg" alt=""/>
-        <img draggable="false" class="img" src="images/5.jpg" alt=""/>
-        <img draggable="false" class="img" src="images/6.jpg" alt=""/>
-        <img draggable="false" class="img" src="images/7.jpg" alt=""/>
-        <img draggable="false" class="img" src="images/8.jpg" alt=""/>
-        <img draggable="false" class="img" src="images/9.jpg" alt=""/>
-        <img draggable="false" class="img" src="images/10.jpg" alt=""/>
-        <img draggable="false" class="img" src="images/11.jpg" alt=""/>
-        <img draggable="false" class="img" src="images/5.jpg" alt=""/>
+    <div class="wrap">
+        <img class="img" src="images/1.jpg" alt=""/>
+        <img class="img" src="images/2.jpg" alt=""/>
+        <img class="img" src="images/3.jpg" alt=""/>
+        <img class="img" src="images/4.jpg" alt=""/>
+        <img class="img" src="images/5.jpg" alt=""/>
+        <img class="img" src="images/6.jpg" alt=""/>
+        <img class="img" src="images/7.jpg" alt=""/>
+        <img class="img" src="images/8.jpg" alt=""/>
+        <img class="img" src="images/9.jpg" alt=""/>
+        <img class="img" src="images/10.jpg" alt=""/>
+        <img class="img" src="images/11.jpg" alt=""/>
+        <img class="img" src="images/5.jpg" alt=""/>
     </div>
 </div>
 <script>
@@ -90,9 +90,11 @@
 
 
     window.onload = function () {
-        Array.prototype.forEach.call(img, function (item, index) {
+         Array.prototype.forEach.call(img, function (item, index) {
             item.style.cssText = 'transform:rotateY(' + deg * index + 'deg) translateZ(300px);transition: 1s ' + (img_num - index) * .1 + 's';
-        });
+         });
+        var text;
+        console.log(text)
     };
 
     bg.onmousedown = function (ev) {
@@ -126,6 +128,7 @@
                 }
             },1000 / 60);
         }
+        return false;
     }
     function $(item) {//封装一个简单获取节点的方法
         var first = item.substring(0, 1);
